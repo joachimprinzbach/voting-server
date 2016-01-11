@@ -4,7 +4,7 @@ var port = process.env.PORT || 8090
 
 export function startServer(store) {
   const io = new Server().attach(port);
-  console.log(port);
+  console.log("http server listening on %d", port)
 
   store.subscribe(
     () => io.emit('state', store.getState().toJS())
